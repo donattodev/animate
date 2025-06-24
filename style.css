@@ -10,15 +10,89 @@
 
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
+  align-items: center;
   height: 100vh;
-  background-color: #121215;
+  background-color: #0d1117;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60pt;
+}
+
+@keyframes antenna-swing {
+
+  0%,
+  100% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes eye-swing {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-1px);
+  }
+
+  75% {
+    transform: translateX(1px);
+  }
+}
+
+.bot-icon .antenna,
+.bot-icon .eye {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.bot-icon .antenna {
+  animation: antenna-swing 1s ease-in-out infinite;
+  transform-origin: 10px 6px;
+}
+
+.bot-icon .eye {
+  animation: eye-swing 1s ease infinite;
 }
 
 
-h1 {
-  font-size: 80px;
-  color: white;
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0d1117;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+/*
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #00d8ff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+*/
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
